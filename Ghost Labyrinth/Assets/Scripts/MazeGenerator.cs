@@ -7,6 +7,7 @@ public class MazeGenerator : MonoBehaviour {
 	public int cols = 15;
 	public GameObject wall;
 	public GameObject player;
+	public GameObject enemy;
 	public GameObject floor;
 
 	private int[,] grid;

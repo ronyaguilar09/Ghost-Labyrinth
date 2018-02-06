@@ -16,8 +16,6 @@ public class GameManager : MonoBehaviour {
 		GameObject maze = Instantiate (mazeHolder, new Vector3 (0, 0, 0), Quaternion.identity);
 		MazeGenerator mazeGen = maze.GetComponent<MazeGenerator> ();
 		mazeGen.createMaze (level);
-		maze.GetComponent<NavMeshGenerator> ().BuildNav ();
 		mazeGen.spawnEntities ();
-
 	}
 }
