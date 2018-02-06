@@ -5,7 +5,7 @@ This Software Requirements Specification (SRS) outlines the requirements for the
 ![Game Diagram](./images/Ghost-Labyrinth-Diagram.png)
 
 ## 5.2 FUNCTIONAL REQUIREMENTS
-- 5.2.1 ** Maze Level Design **
+- 5.2.1 **Maze Level Design**
     - 5.2.1.1 The maze shall be procedurally randomly generated based on level.
     - 5.2.1.2 The maze shall be enclosed.
     - 5.2.1.3 The maze shall contain no loops or open areas.
@@ -14,7 +14,7 @@ This Software Requirements Specification (SRS) outlines the requirements for the
     - 5.2.1.6 The maze shall be traversable by player and enemy AI.
     - 5.2.1.7 The maze will contain material and texture art.
     - 5.2.1.8 The maze will contain ambient sound.
-- 5.2.2 ** Player Interaction **
+- 5.2.2 **Player Interaction**
     - 5.2.2.1 The player shall be able to move the protagonist around.
     - 5.2.2.2 The player shall be able to see a limited radius of visibility.
     - 5.2.2.3 The player shall be able to place limited "breadcrumbs" throughout the maze.
@@ -23,7 +23,7 @@ This Software Requirements Specification (SRS) outlines the requirements for the
     - 5.2.2.6 The player shall be able to pick up collectibles.
     - 5.2.2.7 The player shall be able to pause the game.
     - 5.2.2.8 The player shall be able to exit the game.
-- 5.2.3 ** Enemy Manager **
+- 5.2.3 **Enemy Manager**
     - 5.2.3.1 The Enemy Manager shall be able to transfer player data to enemy instances.
     - 5.2.3.2 The Enemy Manager shall be able to transfer maze data to enemy instances.
     - 5.2.3.3 The Enemy Manager shall be able to instantiate an Enemy.
@@ -37,7 +37,7 @@ This Software Requirements Specification (SRS) outlines the requirements for the
         - 5.2.3.3.8 An enemy shall be able to only see in forward direction.
         - 5.2.3.3.9 An enemy shall not be able to see through walls.
         - 5.2.3.3.10 An enemy shall be able to pass through other Enemies.
-- 5.2.4 ** User Interface Manager **
+- 5.2.4 **User Interface Manager**
     - 5.2.4.1 The User Interface Manager shall be able to handle the Heads Up Display (HUD)
         - 5.2.4.1.1 The HUD shall be visible while game is in progress.
         - 5.2.4.1.2 The HUD shall display the player's current score.
@@ -56,18 +56,18 @@ This Software Requirements Specification (SRS) outlines the requirements for the
         - 5.2.4.3.5 The Game Over Menu shall have an "exit" button.
         - 5.2.4.3.6 The Game Over Menu will display the player's high score.
         - 5.2.4.3.7 The Game Over Menu will notify the player if previous high score was beaten.
-- 5.2.5 ** Game Manager **
+- 5.2.5 **Game Manager**
     - 5.2.5.1 The Game Manager shall be able to handle transition of various game states.
     - 5.2.5.2 The Game Manager shall allow communication between sub-managers.
     - 5.2.5.3 The Game Manager shall encapsulate all game data.
 
 ## 5.3 PERFORMANCE REQUIREMENTS
-    - 5.3.1 The protagonist shall react instantly to player's input.
-    - 5.3.2 The HUD shall update instantly upon change in game state.
-    - 5.3.3 The enemy shall calculate a path to destination in less than 5 seconds.
-    - 5.3.4 The maze shall randomly generate in less than 5 seconds.
-    - 5.3.5 The game shall pause instantly upon player's input.
-    - 5.3.6 The game shall restart and clear all data upon player's input in less than 2 seconds.
+   - 5.3.1 The protagonist shall react instantly to player's input.
+   - 5.3.2 The HUD shall update instantly upon change in game state.
+   - 5.3.3 The enemy shall calculate a path to destination in less than 5 seconds.
+   - 5.3.4 The maze shall randomly generate in less than 5 seconds.
+   - 5.3.5 The game shall pause instantly upon player's input.
+   - 5.3.6 The game shall restart and clear all data upon player's input in less than 2 seconds.
 
 ## 5.4 ENVIRONMENT REQUIREMENTS
 ###  5.4.1 DEVELOPMENT ENVIRONMENT REQUIREMENTS
