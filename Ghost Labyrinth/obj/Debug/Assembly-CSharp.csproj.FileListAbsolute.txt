@@ -32,7 +32,6 @@ E:\Dev\Unity\Black Labyrinth\Temp\bin\Debug\UnityEngine.HoloLens.xml
 E:\Dev\Unity\Black Labyrinth\Temp\bin\Debug\UnityEngine.VR.xml
 E:\Dev\Unity\Black Labyrinth\obj\Debug\Assembly-CSharp.pdb
 E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
-E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\obj\Debug\Assembly-CSharp.dll
 E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\Temp\bin\Debug\Assembly-CSharp.dll
 E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\Temp\bin\Debug\Assembly-CSharp.pdb
 E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\Temp\bin\Debug\nunit.framework.dll
@@ -59,8 +58,8 @@ E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\Temp\bin\Debug\UnityEditor.xml
 E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.UI.xml
 E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.Networking.xml
 E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.TestRunner.xml
-E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\Temp\bin\Debug\nunit.framework.xml
 E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.Analytics.xml
 E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.HoloLens.xml
 E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.VR.xml
+E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\obj\Debug\Assembly-CSharp.dll
 E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\obj\Debug\Assembly-CSharp.pdb

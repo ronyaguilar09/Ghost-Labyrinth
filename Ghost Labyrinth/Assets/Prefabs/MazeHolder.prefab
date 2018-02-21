@@ -67,5 +67,6 @@ MonoBehaviour:
   rows: 15
   cols: 15
   wall: {fileID: 1631152651339448, guid: deae35a24f7d05a44902eb5386f3c3a0, type: 2}
-  player: {fileID: 1790371827678756, guid: f7c4c19b4267f9641a949ad514e2c2a5, type: 2}
+  player: {fileID: 0}
+  enemy: {fileID: 0}
   floor: {fileID: 1677320955452162, guid: 44d1c0c4afbc3fb46a64f9db734739eb, type: 2}
