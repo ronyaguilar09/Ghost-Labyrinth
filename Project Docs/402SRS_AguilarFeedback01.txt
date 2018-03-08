@@ -1,0 +1,27 @@
+GhostLabyrinth Project SRS Evaluation
+=====================================
+
+Nice job on this, a great beginning.
+
+Some suggestions.
+
+When thinking of requirements, try to be even more specific about what 
+you are specifying.  For example, requirement 5.2.1.5 specifies things
+called "collectibles".  What will those be?  Another example, requirment
+5.2.2.2 "limited radius of visibility" -- limited by what?  Can it be
+set by the user as an option?  Or, requirements in section 5.3 which
+specify "instantly" as a performance time -- how does one quantify that?
+
+These are "philosophy of requirements" issues that you can apply in a
+*general* way to nearly all the requirements in the document.  However,
+in the essence of time remaining, I'm assigning full credit to this
+deliverable, for both the initial and the final submissions.
+
+You don't have to do anything further with this document if you don't
+feel the need to do so.
+
+Deliverable D-02: 15% out of 15% = 100% which is an A-plus
+Deliverable D-05:  5% out of  5% = 100% which is an A-plus
+
+Keep up the good work!
+
