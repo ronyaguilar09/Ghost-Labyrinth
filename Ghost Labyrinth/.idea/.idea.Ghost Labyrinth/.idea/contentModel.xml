@@ -4,28 +4,11 @@
     <e p="C:\Users\Rony Aguilar\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_Ghost Labyrinth.-1349828848.00" t="ExcludeRecursive" />
     <e p="E:\LMU\Ghost-Labyrinth\Ghost Labyrinth" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
-      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="Destroyer.cs" t="Include" />
         <e p="Fonts" t="Include">
           <e p="LuckiestGuy" t="Include">
             <e p="LICENSE.txt" t="Include" />
-          </e>
-        </e>
-        <e p="NavMeshComponents" t="Include">
-          <e p="Editor" t="Include">
-            <e p="NavMeshComponentsGUIUtility.cs" t="Include" />
-            <e p="NavMeshLinkEditor.cs" t="Include" />
-            <e p="NavMeshModifierEditor.cs" t="Include" />
-            <e p="NavMeshModifierVolumeEditor.cs" t="Include" />
-            <e p="NavMeshSurfaceEditor.cs" t="Include" />
-          </e>
-          <e p="Scripts" t="Include">
-            <e p="NavMeshLink.cs" t="Include" />
-            <e p="NavMeshModifier.cs" t="Include" />
-            <e p="NavMeshModifierVolume.cs" t="Include" />
-            <e p="NavMeshSurface.cs" t="Include" />
           </e>
         </e>
         <e p="Plugins" t="Include">
@@ -35,7 +18,6 @@
             </e>
           </e>
         </e>
-        <e p="Rotator.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Enemy" t="Include">
             <e p="AStarSearch.cs" t="Include" />
@@ -48,13 +30,16 @@
           </e>
           <e p="Maze" t="Include">
             <e p="MazeGenerator.cs" t="Include" />
-            <e p="NavMeshGenerator.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
             <e p="PlayerMovement.cs" t="Include" />
             <e p="PlayerStats.cs" t="Include" />
           </e>
+          <e p="Utilities" t="Include">
+            <e p="Rotator.cs" t="Include" />
+          </e>
         </e>
+        <e p="UIManager.cs" t="Include" />
       </e>
       <e p="Ghost Labyrinth.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />

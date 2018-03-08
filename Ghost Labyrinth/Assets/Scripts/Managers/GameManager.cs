@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
 
 	public MazeGenerator Maze;
 	public SpawnManager Spawn_Manager;
+	public UIManager UI_Manager;
 	
 	private int level = 1;
 
@@ -24,18 +25,33 @@ public class GameManager : MonoBehaviour {
 			Spawn_Manager.SpawnCollectible();
 		}
 
-		StartCoroutine(CheckProgress());
+		Time.timeScale = 1f;
 	}
 
-	private void AdvanceLevel()
+	public void CompleteLevel()
 	{
 		level++;
-		Spawn_Manager.clearLevel();
+		Time.timeScale = 0f;
+		UI_Manager.DisplayComplete();
 		Maze.clearMaze();
-		HUDManager.PrepareLevel(level);
-		StartLevel(level);
+		UI_Manager.PrepareHUD(level);
 	}
-	
+
+	public void AdvanceLevel()
+	{
+		StartLevel(level);
+		UI_Manager.HideMenu();
+	}
+
+	public void QuitGame()
+	{
+		#if UNITY_EDITOR 
+		if (Application.isEditor) 
+			UnityEditor.EditorApplication.isPlaying = false;
+		#endif
+		
+		Application.Quit();
+	}
 	// Make manager public to hud for level progression
 
 }

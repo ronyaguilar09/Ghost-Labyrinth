@@ -12,14 +12,14 @@ public class MazeGenerator : MonoBehaviour {
 
 	private int[,] grid;
 	private Vector3 [] cellStack;
+	private GameObject wall_parent;
+	private GameObject floorInstance;
 	public static Vector3 startingCell;
 
 	public void clearMaze()
 	{
-		for(int i = 0; i < transform.childCount; i ++)
-		{
-			Destroy(this.transform.GetChild(i).gameObject);
-		}
+		Destroy(wall_parent);
+		Destroy(floorInstance);
 	}
 
 	public void createMaze(int level) {
@@ -36,6 +36,9 @@ public class MazeGenerator : MonoBehaviour {
 
 		startingCell = new Vector3(Random.Range(1, grid.GetLength(0) - 1), 0f, Random.Range(1, grid.GetLength(1) - 1));
 		grid[(int)startingCell.x, (int)startingCell.z] = 0;
+
+	    wall_parent = new GameObject("Wall Parent");
+		wall_parent.transform.SetParent(gameObject.transform);
 
 		recurse((int)startingCell.x, (int)startingCell.z);
 		populateWalls ();
@@ -62,10 +65,10 @@ public class MazeGenerator : MonoBehaviour {
 	}
 
 	private void scaleAndPositionFloor() {
-		floor = Instantiate (floor, gameObject.transform.position, Quaternion.identity);
-		floor.transform.SetParent (gameObject.transform);
-		floor.transform.position = new Vector3 (cols / 2, -0.5f, rows / 2);
-		floor.transform.localScale = new Vector3 ((float)(cols + 2) / 10, 1f, (float)(rows + 2) / 10);
+		floorInstance = Instantiate (floor, gameObject.transform.position, Quaternion.identity);
+		floorInstance.transform.SetParent (gameObject.transform);
+		floorInstance.transform.position = new Vector3 (cols / 2, -0.5f, rows / 2);
+		floorInstance.transform.localScale = new Vector3 ((float)(cols + 2) / 10, 1f, (float)(rows + 2) / 10);
 	}
 	private void recurse (int x, int y)
 	{
@@ -139,7 +142,7 @@ public class MazeGenerator : MonoBehaviour {
 			for(int x = 0; x < grid.GetLength(0); x++){
 				if (x == 0 || z == 0 || x == grid.GetLength (0) - 1 || z == grid.GetLength (1) - 1 || grid [x, z] == 1) {
 					GameObject instance = Instantiate (wall, new Vector3 (x, 0f, z), Quaternion.identity);
-					instance.transform.SetParent (gameObject.transform);
+					instance.transform.SetParent (wall_parent.transform);
 				}
 			}
 		}

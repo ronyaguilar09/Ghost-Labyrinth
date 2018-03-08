@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     public HUDManager hud;
+    public GameManager manager;
     private Animator anim;
     private PlayerMovement movement;
 
@@ -28,14 +29,15 @@ public class PlayerStats : MonoBehaviour
             }
         } else if (other.gameObject.tag == "Collectible")
         {
-            Destroy(other.gameObject);
+            
+            Destroy(other.transform.parent.gameObject);
             Debug.Log("Found");
             HUDManager.collectiblesFound++;
             HUDManager.score += 100;
             hud.UpdateUI();
             if (HUDManager.collectiblesFound >= HUDManager.totalCollectibles)
             {
-               // GameManager.AdvanceLevel();
+               manager.CompleteLevel();
             }
         }
     }

@@ -19,6 +19,7 @@ public class HUDManager : MonoBehaviour {
 	public Image heart1;
 	public Image heart2;
 	public Image heart3;
+
    
 	// Use this for initialization
 	void Awake ()
@@ -46,6 +47,8 @@ public class HUDManager : MonoBehaviour {
 		breadcrumbs = (int)level / 2;
 		livesLeft = 3;
 	}
+
+	
 
 	private void UpdateLives()
 	{
