@@ -9,6 +9,7 @@ public class MazeGenerator : MonoBehaviour {
 	public GameObject player;
 	public GameObject enemy;
 	public GameObject floor;
+	public SpawnManager spawns;
 
 	private int[,] grid;
 	private Vector3 [] cellStack;
@@ -19,7 +20,6 @@ public class MazeGenerator : MonoBehaviour {
 	public void clearMaze()
 	{
 		Destroy(wall_parent);
-		Destroy(floorInstance);
 	}
 
 	public void createMaze(int level) {
@@ -65,10 +65,11 @@ public class MazeGenerator : MonoBehaviour {
 	}
 
 	private void scaleAndPositionFloor() {
-		floorInstance = Instantiate (floor, gameObject.transform.position, Quaternion.identity);
-		floorInstance.transform.SetParent (gameObject.transform);
-		floorInstance.transform.position = new Vector3 (cols / 2, -0.5f, rows / 2);
-		floorInstance.transform.localScale = new Vector3 ((float)(cols + 2) / 10, 1f, (float)(rows + 2) / 10);
+		//floorInstance = Instantiate (floor, gameObject.transform.position, Quaternion.identity);
+		//floorInstance.transform.SetParent (gameObject.transform);
+		floor.transform.position = new Vector3 (cols / 2 + 1, -0.7f, rows / 2 + 1);
+		floor.transform.localScale = new Vector3 ((float)cols+1, 0.2f, (float)rows+1);
+		//floor.transform.localScale = new Vector3 ((float)(cols + 2) / 10, 1f, (float)(rows + 2) / 10);
 	}
 	private void recurse (int x, int y)
 	{
@@ -119,6 +120,32 @@ public class MazeGenerator : MonoBehaviour {
 			}
 		}
 
+		if(isADeadEnd(x,y))
+			spawns.item_spawns.Push(new Vector3(x, 0f, y));
+
+	}
+
+	private bool isADeadEnd(int x, int z)
+	{
+		// Skip player's position
+		if (x == startingCell.x && z == startingCell.z)
+			return false;
+
+		// 4 cases: ends below, to right, to left, to top
+		// ends below
+		if (grid[x + 1, z] == 1 && grid[x - 1, z] == 1 && grid[x, z - 1] == 1)
+			return true;
+		// ends to left
+		if (grid[x - 1, z] == 1 && grid[x, z - 1] == 1 && grid[x, z+1] == 1)
+			return true;
+		// ends to top
+		if (grid[x + 1, z] == 1 && grid[x - 1, z] == 1 && grid[x, z + 1] == 1)
+			return true;
+		// ends to right
+		if (grid[x + 1, z] == 1 && grid[x, z + 1] == 1 && grid[x, z - 1] == 1)
+			return true;
+
+		return false;
 	}
 
 	private List<int> generateRandomDirections(){

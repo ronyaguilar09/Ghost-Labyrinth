@@ -1,32 +1,37 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Policy;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class SpawnManager : MonoBehaviour
 {
 	public MazeGenerator MazeGen;
+	public EnemyManager Enemy_Manager;
 	public GameObject Player;
+	public GameObject Enemy;
 	public GameObject Collectible;
+	public Stack<Vector3> item_spawns = new Stack<Vector3>();
+	public Stack<Vector3> enemy_spawns = new Stack<Vector3>();
 
 	private int minRadius = 7;
 
 
 	public void SpawnPlayer()
 	{
-		Vector3 nextCell = ClosestOpenVector();
 		Player.transform.position = MazeGenerator.startingCell;
+		Vector3 nextCell = ClosestOpenVectorTo(Player.transform.position);
 		Player.transform.LookAt(nextCell);
 	}
 
-	private Vector3 ClosestOpenVector()
+	private Vector3 ClosestOpenVectorTo(Vector3 position)
 	{
 		int [,] grid = MazeGen.GetMazeGrid();
-		Vector3 playerSpawn = MazeGenerator.startingCell;
 		
-		return FindNextOpenSpace((int)playerSpawn.x, (int)playerSpawn.z, grid);
+		return FindNextOpenSpace((int)position.x, (int)position.z, grid);
 	}
 
 	private Vector3 FindNextOpenSpace(int x, int z, int[,] grid)
@@ -55,9 +60,17 @@ public class SpawnManager : MonoBehaviour
 	
 	private void SpawnObjectAtRandom(GameObject obj)
 	{
-		// Need to find random available spot to pass
-		Vector3 randomPosition = GetRandomPosition();
-		Instantiate(obj, randomPosition, Quaternion.identity);
+		// Using dead ends as spawn points, random open space available if not enough deadends
+		try
+		{
+			Vector3 randomPosition = item_spawns.Pop();
+			enemy_spawns.Push(randomPosition);
+			Instantiate(obj, randomPosition, Quaternion.identity);
+		}
+		catch (InvalidOperationException e)
+		{
+			Instantiate(obj, GetRandomPosition(), Quaternion.identity);
+		}
 	}
 	
 
@@ -87,8 +100,15 @@ public class SpawnManager : MonoBehaviour
 		SpawnObjectAtRandom(Collectible);
 	}
 
-	public void clearLevel()
+	public void SpawnEnemy(){
+		GameObject enemy_ = Instantiate (Enemy, enemy_spawns.Pop (), Quaternion.identity);
+		Enemy_Manager.AddEnemy (enemy_);
+		enemy_.transform.LookAt (ClosestOpenVectorTo(enemy_.transform.position));
+	}
+
+	public void clearSpawns()
 	{
-		
+		enemy_spawns.Clear ();
+		item_spawns.Clear ();
 	}
 }

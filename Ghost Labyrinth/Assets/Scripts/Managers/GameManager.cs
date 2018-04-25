@@ -9,8 +9,10 @@ public class GameManager : MonoBehaviour {
 	public MazeGenerator Maze;
 	public SpawnManager Spawn_Manager;
 	public UIManager UI_Manager;
+	public EnemyManager Enemy_Manager;
+	public NavMeshSurface surface; 
 	
-	private int level = 1;
+	public int level = 1;
 
 	void Awake ()
 	{
@@ -20,10 +22,18 @@ public class GameManager : MonoBehaviour {
 	private void StartLevel(int level){
 		Maze.createMaze (level);
 		Spawn_Manager.SpawnPlayer();
+		Enemy_Manager.setCount (level / 2);
+
 		for (int i = 0; i < HUDManager.totalCollectibles; i++)
 		{
 			Spawn_Manager.SpawnCollectible();
 		}
+
+		for(int i = 0; i < Enemy_Manager.getCount(); i++){
+			Spawn_Manager.SpawnEnemy ();
+		}
+
+		surface.BuildNavMesh();
 
 		Time.timeScale = 1f;
 	}
@@ -34,6 +44,8 @@ public class GameManager : MonoBehaviour {
 		Time.timeScale = 0f;
 		UI_Manager.DisplayComplete();
 		Maze.clearMaze();
+		Spawn_Manager.clearSpawns ();
+		Enemy_Manager.clearEnemies();
 		UI_Manager.PrepareHUD(level);
 	}
 

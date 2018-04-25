@@ -34,8 +34,10 @@ public class PlayerMovement : MonoBehaviour {
 
 	private void Animate(float m, float t)
 	{
-		bool moving = m != 0 || t != 0;
-		anim.SetBool("IsWalking", moving);
+			anim.SetBool("RunningForward", m > 0);
+			anim.SetBool("RunningBackward", m < 0);
+			anim.SetBool("TurningLeft", (t < 0 && m == 0));
+			anim.SetBool("TurningRight", (t > 0 && m == 0));
 	}
 
 	private void Turn(){
