@@ -12,12 +12,16 @@ public class StateController : MonoBehaviour
 	public Transform eyes;
 	public Transform target;
 	public float waitTime;
+	public AudioClip attackClip;
+	public AudioClip chaseClip;
 
 	[HideInInspector] public MazeGenerator maze;
 	[HideInInspector] public NavMeshAgent agent;
 	[HideInInspector] public List<Vector3> spaces;
 	[HideInInspector] public float currentTimer;
 	[HideInInspector] public Animator anim;
+	[HideInInspector] public AudioSource audio;
+	[HideInInspector] public bool justAttacked;
 
 	// Use this for initialization
 	void Awake ()
@@ -29,6 +33,8 @@ public class StateController : MonoBehaviour
 		eyes = transform.Find("Eyes");
 		target = GameObject.FindGameObjectWithTag("Player").transform;
 		enemyStats = GameObject.Find("EnemyManager").GetComponent<EnemyManager>().stats;
+		audio = this.GetComponent<AudioSource>();
+		justAttacked = false;
 	}
 	
 	// Update is called once per frame

@@ -7,15 +7,20 @@ public class PlayerMovement : MonoBehaviour {
 
 	public float moveSpeed = 5f;
 	public float turnSpeed = 0.5f;
+	public float audio_pitch = 1.5f;
 	Animator anim;
 
 	private float moveAxisValue;
 	private float turnAxisValue;
 	private Rigidbody rbody;
+
+	private AudioSource footstepAudio;
+	
 	// Use this for initialization
 	private void Start () {
 		rbody = this.GetComponent<Rigidbody> ();
 		anim = this.transform.Find("Avatar").gameObject.GetComponent<Animator>();
+		footstepAudio = this.GetComponent<AudioSource>();
 		//anim = this.GetComponent<Animator>();
 	}
 	
@@ -25,6 +30,12 @@ public class PlayerMovement : MonoBehaviour {
 		Move ();
 		Turn ();
 		Animate(moveAxisValue, turnAxisValue);
+		
+		if (moveAxisValue != 0 && !footstepAudio.isPlaying)
+		{
+			footstepAudio.pitch = Random.Range(1.2f, 1.5f);
+			footstepAudio.Play();
+		}
 	}
 
 	private void Move(){

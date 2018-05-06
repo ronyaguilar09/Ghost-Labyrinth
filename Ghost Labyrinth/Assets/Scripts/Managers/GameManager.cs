@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour {
 	public SpawnManager Spawn_Manager;
 	public UIManager UI_Manager;
 	public EnemyManager Enemy_Manager;
-	public NavMeshSurface surface; 
+	public NavMeshSurface surface;
+	public GameObject player;
 	
 	public int level = 1;
 
@@ -51,6 +52,25 @@ public class GameManager : MonoBehaviour {
 
 	public void AdvanceLevel()
 	{
+		StartLevel(level);
+		UI_Manager.HideMenu();
+	}
+
+	public void GameOver()
+	{
+		Time.timeScale = 0f;
+		level = 1;
+		UI_Manager.DisplayGameOver();
+		Maze.clearMaze();
+		Spawn_Manager.clearSpawns ();
+		Enemy_Manager.clearEnemies();
+		UI_Manager.PrepareHUD(level);
+	}
+
+	public void RestartGame()
+	{
+		player.transform.Find("Avatar").GetComponent<Animator>().SetTrigger("Restart");
+		player.GetComponent<PlayerMovement>().enabled = true;
 		StartLevel(level);
 		UI_Manager.HideMenu();
 	}

@@ -19,6 +19,8 @@ public class ChaseDecision : Decision
                 if (hit.collider.CompareTag("Player"))
                 {
                     Debug.Log("Player Found.");
+                    controller.audio.clip = controller.chaseClip;
+                    controller.audio.Play();
                     return true;
                 }
             }
@@ -32,8 +34,6 @@ public class ChaseDecision : Decision
         if (Vector3.Angle(controller.eyes.forward, controller.target.position - controller.transform.position) <= controller.enemyStats.visionAngleThreshold)
         {
             Vector3 direction = controller.target.position - controller.transform.position;
-           // Debug.DrawLine(controller.transform.position, controller.target.position, Color.red);
-            Debug.DrawRay(controller.transform.position, direction, Color.red);
             return true;
         }
 

@@ -5,7 +5,9 @@ using UnityEngine;
 public class MazeGenerator : MonoBehaviour {
 	public int rows = 15;
 	public int cols = 15;
+	public float hiding_chance = 0.08f;
 	public GameObject wall;
+	public GameObject hidingWall;
 	public GameObject player;
 	public GameObject enemy;
 	public GameObject floor;
@@ -41,7 +43,7 @@ public class MazeGenerator : MonoBehaviour {
 		wall_parent.transform.SetParent(gameObject.transform);
 
 		recurse((int)startingCell.x, (int)startingCell.z);
-		populateWalls ();
+		populateEnvironment ();
 		scaleAndPositionFloor ();
 	}
 
@@ -164,12 +166,34 @@ public class MazeGenerator : MonoBehaviour {
 		return randDirections;
 	}
 		
-	private void populateWalls(){
+	private void populateEnvironment(){
 		for(int z = 0; z < grid.GetLength(1); z++){
 			for(int x = 0; x < grid.GetLength(0); x++){
-				if (x == 0 || z == 0 || x == grid.GetLength (0) - 1 || z == grid.GetLength (1) - 1 || grid [x, z] == 1) {
-					GameObject instance = Instantiate (wall, new Vector3 (x, 0f, z), Quaternion.identity);
-					instance.transform.SetParent (wall_parent.transform);
+				
+				if (x == 0 || z == 0 || x == grid.GetLength(0) - 1 || z == grid.GetLength(1) - 1 || grid[x, z] == 1)
+				{
+					if (Random.Range(0.0f, 1.0f) <= hiding_chance)
+					{
+						if (x != 0 && z != 0 && x != grid.GetLength(0) - 1 && z != grid.GetLength(1) - 1 && grid[x, z] == 1)
+						{
+							Vector3 spawn_vector = new Vector3(x, 0f, z);
+							Vector3 rotateTowards = spawns.ClosestOpenVectorTo(spawn_vector);
+							
+							GameObject door_wall = Instantiate(hidingWall, spawn_vector, Quaternion.identity);
+							door_wall.transform.SetParent(wall_parent.transform);
+							door_wall.transform.LookAt(rotateTowards);
+						}
+						else
+						{
+							GameObject _wall = Instantiate(wall, new Vector3(x, 0f, z), Quaternion.identity);
+							_wall.transform.SetParent(wall_parent.transform);
+						}
+					}
+					else
+					{
+						GameObject _wall = Instantiate(wall, new Vector3(x, 0f, z), Quaternion.identity);
+						_wall.transform.SetParent(wall_parent.transform);
+					}
 				}
 			}
 		}

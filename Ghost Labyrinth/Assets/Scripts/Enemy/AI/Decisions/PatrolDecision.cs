@@ -14,8 +14,10 @@ public class PatrolDecision : Decision {
     {
         if (controller.currentTimer >= controller.waitTime)
         {
-            controller.anim.SetBool("IsIdle", false);
-            controller.anim.SetBool("IsPatrolling", true);
+           // controller.anim.SetBool("IsIdle", false);
+            //controller.anim.SetBool("IsPatrolling", true);
+            controller.anim.SetTrigger("DoneIdle");
+            controller.agent.ResetPath();
             return true;
         }
 

@@ -18,6 +18,7 @@ public class SpawnManager : MonoBehaviour
 	public Stack<Vector3> enemy_spawns = new Stack<Vector3>();
 
 	private int minRadius = 7;
+	private List<GameObject> items = new List<GameObject>();
 
 
 	public void SpawnPlayer()
@@ -27,7 +28,7 @@ public class SpawnManager : MonoBehaviour
 		Player.transform.LookAt(nextCell);
 	}
 
-	private Vector3 ClosestOpenVectorTo(Vector3 position)
+	public Vector3 ClosestOpenVectorTo(Vector3 position)
 	{
 		int [,] grid = MazeGen.GetMazeGrid();
 		
@@ -110,5 +111,14 @@ public class SpawnManager : MonoBehaviour
 	{
 		enemy_spawns.Clear ();
 		item_spawns.Clear ();
+	}
+
+	public void clearItems()
+	{
+		foreach (GameObject item in items)
+		{
+			Destroy(item);
+			items.Remove(item);
+		}
 	}
 }

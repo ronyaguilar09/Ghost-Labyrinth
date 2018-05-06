@@ -36,8 +36,6 @@ E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\Temp\bin\Debug\Assembly-CSharp.dll
 E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\Temp\bin\Debug\Assembly-CSharp.pdb
 E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\Temp\bin\Debug\nunit.framework.dll
 E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\Temp\bin\Debug\UnityEditor.dll
-E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\Temp\bin\Debug\UnityEditor.iOS.Extensions.Common.dll
-E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\Temp\bin\Debug\UnityEditor.iOS.Extensions.Xcode.dll
 E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.Analytics.dll
 E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.dll
 E:\LMU\Ghost-Labyrinth\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.HoloLens.dll
@@ -124,3 +122,33 @@ E:\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.VR.xml
 E:\Ghost Labyrinth\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 E:\Ghost Labyrinth\obj\Debug\Assembly-CSharp.dll
 E:\Ghost Labyrinth\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\nunit.framework.dll
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\UnityEditor.dll
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.Analytics.dll
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.dll
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.HoloLens.dll
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.Networking.dll
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.TestRunner.dll
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.UI.dll
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.VR.dll
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\Unity.SerializationLogic.dll
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\Unity.UNetWeaver.dll
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\Unity.CecilTools.dll
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.xml
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\UnityEditor.xml
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.UI.xml
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.Networking.xml
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.TestRunner.xml
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.Analytics.xml
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.HoloLens.xml
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\Temp\bin\Debug\UnityEngine.VR.xml
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\obj\Debug\Assembly-CSharp.dll
+C:\Users\Rony Aguilar\Documents\Unity\Ghost Labyrinth\obj\Debug\Assembly-CSharp.pdb

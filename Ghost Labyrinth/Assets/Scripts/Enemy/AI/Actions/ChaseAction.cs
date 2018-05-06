@@ -8,22 +8,32 @@ public class ChaseAction : Action
 {
     public override void Act(StateController controller)
     {
-        Chase(controller);
-        Attack(controller);
+        if (!controller.justAttacked)
+        {
+            Chase(controller);
+            Attack(controller);
+        }
+        else
+        {
+            Attack(controller);
+        }
     }
 
     private void Chase(StateController controller)
     {
         controller.agent.SetDestination(controller.target.position);
-       // controller.agent.isStopped = false;
     }
 
     private void Attack(StateController controller)
     {
-        if (controller.agent.remainingDistance <= controller.enemyStats.attackTheshold && !controller.agent.pathPending)
+        if (controller.agent.remainingDistance <= controller.enemyStats.attackTheshold && !controller.agent.pathPending && !controller.justAttacked)
         {
-            Debug.Log("Player Attacked!");
-           // controller.anim.SetTrigger("Attack");
+            Debug.Log("Attack");
+            controller.target.gameObject.GetComponent<PlayerStats>().AttackPlayer();
+            controller.anim.SetTrigger("Attack");
+            controller.audio.clip = controller.attackClip;
+            controller.audio.Play();
+            controller.justAttacked = true;
         }
     }
 }

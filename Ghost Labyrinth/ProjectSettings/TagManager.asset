@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Floor
   - Collectible
+  - Door
+  - Enemy
   layers:
   - Default
   - TransparentFX

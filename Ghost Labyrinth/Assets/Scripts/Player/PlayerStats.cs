@@ -18,7 +18,7 @@ public class PlayerStats : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemy")
+       /* if (other.gameObject.tag == "Enemy")
         {
             HUDManager.livesLeft -= 1;
             hud.UpdateUI();
@@ -27,10 +27,11 @@ public class PlayerStats : MonoBehaviour
                 anim.SetTrigger("Die");
                 movement.enabled = false;
             }
-        } else if (other.gameObject.tag == "Collectible")
+        } else*/ if (other.gameObject.tag == "Collectible")
         {
-            
-            Destroy(other.transform.parent.gameObject);
+            GameObject parent = other.transform.parent.gameObject;
+            AudioSource audio = parent.GetComponent<AudioSource>();
+            audio.Play();
             Debug.Log("Found");
             HUDManager.collectiblesFound++;
             HUDManager.score += 100;
@@ -39,7 +40,37 @@ public class PlayerStats : MonoBehaviour
             {
                manager.CompleteLevel();
             }
+
+            other.gameObject.SetActive(false);
+            parent.GetComponent<Light>().enabled = false;
+            StartCoroutine(DestroyCollectible(parent));
+            StopCoroutine(DestroyCollectible(parent));
         }
+    }
+
+    IEnumerator DestroyCollectible(GameObject obj)
+    {
+        yield return new WaitForSeconds(3);
+        Destroy(obj);
+    }
+
+    public void AttackPlayer()
+    {
+        HUDManager.livesLeft -= 1;
+        hud.UpdateUI();
+        if (HUDManager.livesLeft <= 0)
+        {
+            anim.SetTrigger("Die");
+            movement.enabled = false;
+            StartCoroutine(DeathWait());
+            StopCoroutine(DeathWait());
+        }
+    }
+
+    IEnumerator DeathWait()
+    {
+        yield return new WaitForSeconds(4);
+        manager.GameOver();
     }
 
 }
